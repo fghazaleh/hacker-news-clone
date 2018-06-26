@@ -60,7 +60,8 @@ To run the **Feature** suites
 $ ./test feature
 ~~~
 
-To run the **Integration** suites
+To run the **Integration** suites, which use the real APIs of Hacker News,
+ this test may take a little bit time to execute.
 ~~~
 $ ./test int
 ~~~
