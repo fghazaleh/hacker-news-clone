@@ -54,7 +54,7 @@ $app->get('/new-stories',function(Request $request) use ($app){
 })->bind('new_stories');
 
 /**
- * @Route ("/top-stories")
+ * @Route ("/item/{id}")
  * @method : GET
  * @optional:
  *  { page:int}
