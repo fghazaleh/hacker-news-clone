@@ -1,0 +1,31 @@
+{% extends "layout.html.twig" %}
+{% block title %}Top Stories{% endblock %}
+{% block content %}
+    <h4>Top Stories</h4>
+    <div class="list-group">
+        {% for key, item in stories.all %}
+            <div class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">
+                        {% if item.hasUrl %}
+                        <a href="{{ item.getUrl }}">{{ item.getTitle }}</a>
+                        <small class="color-gray">(<a href="https://news.ycombinator.com/user?id={{ item.getSite }}">{{ item.getSite }}</a>)</small>
+                        {% else %}
+                            {{ item.getTitle }}
+                        {% endif %}
+                    </h5>
+                    <small>{{ item.getTimeForHumans }}</small>
+                </div>
+                <small class="mb-1 color-gray">
+                    <span class="badge badge-primary badge-pill">{{ item.getScore }}</span> points by
+                    <a href="https://news.ycombinator.com/user?id={{ item.getAuthor }}" target="_blank">{{ item.getAuthor }}</a> |
+                    <span class="comments"><a href="{{ url('item_details',{'id':item.getId}) }}">{{ item.getCommentsCount }} comments</a></span>
+                </small>
+            </div>
+        {% endfor %}
+    </div>
+    <div id="moreNewsContainer" class="mt-2 mb-3">
+        <a class="btn btn-primary btn-sm btn-more-news" href="{{ url('top_stories',{'page':page+1}) }}" role="button" title="more news">More...</a>
+    </div>
+{% endblock %}
+

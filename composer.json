@@ -1,0 +1,58 @@
+{
+    "name": "fghazaleh/hacker-news-clone",
+    "description": "A Hacker News clone project",
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": "^7.1.3",
+        "ext-curl":"*",
+        "silex/silex": "~2.0",
+        "silex/web-profiler": "~2.0",
+        "symfony/asset": "~2.8|^3.0",
+        "symfony/class-loader": "~2.8|^3.0",
+        "symfony/config": "~2.8|^3.0",
+        "symfony/console": "~2.8|^3.0",
+        "symfony/css-selector": "~2.8|^3.0",
+        "symfony/debug": "~2.8|^3.0",
+        "symfony/finder": "~2.8|^3.0",
+        "symfony/form": "~2.8|^3.0",
+        "symfony/monolog-bridge": "~2.8|^3.0",
+        "symfony/process": "~2.8|^3.0",
+        "symfony/security": "~2.8|^3.0",
+        "symfony/translation": "~2.8|^3.0",
+        "symfony/twig-bridge": "~2.8|^3.0",
+        "symfony/validator": "~2.8|^3.0",
+        "nesbot/carbon": "^1.30",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "symfony/browser-kit": "~2.8|^3.0",
+        "mockery/mockery": "~1.0",
+        "phpunit/phpunit": "~6.0",
+        "symfony/var-dumper": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "FGhazaleh\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "config": {
+        "process-timeout":0
+    },
+    "scripts": {
+        "run": [
+            "echo 'Started web server on http://localhost:8000'",
+            "php -S localhost:8000 -t web"
+        ]
+    }
+}

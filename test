@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# color schema;
+RED='\033[0;31m' # Red Color
+NC='\033[0m' # No Color
+
+help(){
+	echo "Usage:"
+	printf "\t ${RED}unit${NC}   \t: Run phpunit 'Unit' test suite.\n"
+	printf "\t ${RED}feature${NC}\t: Run phpunit 'Feature' test suite.\n"
+	printf "\t ${RED}int${NC}    \t: Run phpunit 'Integration' test suite.\n"
+	printf "\t ${RED}all${NC}    \t: Run all phpunit test suites.\n"
+	printf "\t ${RED}help${NC}   \t: Show this help.\n"
+	exit 0
+}
+
+if [[ -z $1 ]];then
+	help
+	exit 0
+fi
+
+case $1 in
+	unit)
+		./vendor/bin/phpunit --testsuite Unit
+		;;
+	feature)
+        ./vendor/bin/phpunit --testsuite Feature
+		;;
+	int)
+        ./vendor/bin/phpunit --testsuite Integration
+		;;
+	all)
+        ./vendor/bin/phpunit
+		;;
+	* | -h | help)
+		help
+		;;
+esac

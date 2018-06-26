@@ -1,0 +1,32 @@
+{% extends "layout.html.twig" %}
+{% block title %}Story{% endblock %}
+{% block content %}
+    <h4>Show Story</h4>
+    <div id="storyContainer" class="list-group">
+        <div class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">
+                    {% if story.hasUrl %}
+                        <a href="{{ story.getUrl }}">{{ story.getTitle }}</a>
+                        <small class="color-gray">(<a href="https://news.ycombinator.com/user?id={{ story.getSite }}">{{ story.getSite }}</a>)</small>
+                    {% else %}
+                        {{ story.getTitle }}
+                    {% endif %}
+                </h5>
+                <small>{{ story.getTimeForHumans }}</small>
+            </div>
+            <small class="mb-1 color-gray">
+                <span class="badge badge-primary badge-pill">{{ story.getScore }}</span> points by
+                <a href="https://news.ycombinator.com/user?id={{ story.getAuthor }}" target="_blank">{{ story.getAuthor }}</a> |
+                <span class="comments">{{ story.getCommentsCount }} comments</span>
+            </small>
+        </div>
+    </div><!--/storyContainer-->
+    <h5 class="mt-2">Comments</h5>
+    <div id="commentsContainer" class="mb-2">
+        {% include 'item_details/partials/comment.html.twig' with {
+            'comments': story.getChildren,
+            'level':0
+        } %}
+    </div>
+{% endblock %}

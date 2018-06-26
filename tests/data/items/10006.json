@@ -1,0 +1,11 @@
+{
+  "by" : "Franco",
+  "descendants" : 4,
+  "id" : 10006,
+  "kids" : [ 1000601,1000602,1000604 ],
+  "score" : 300,
+  "time" : 1425228700,
+  "title" : "This is my story title",
+  "type" : "story",
+  "url" : "http://fake.example.com/fake-path/fake-page.html?foo=bar"
+}

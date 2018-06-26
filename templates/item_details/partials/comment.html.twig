@@ -1,0 +1,17 @@
+{% for comment in comments %}
+    <div class="ml-{{ level }} mb-1 card">
+        <div class="card-body">
+            <div class="color-gray small mb-1">
+                By <a class="color-gray" href="https://news.ycombinator.com/user?id={{ comment.getAuthor }}">{{ comment.getAuthor }}</a> {{ comment.getTimeForHumans }}
+            </div>
+            <p class="card-text">{{ comment.getText | raw }}</p>
+        </div>
+    </div>
+    {% if comment.hasChildren %}
+        {% include 'item_details/partials/comment.html.twig' with {
+            'comments': comment.getChildren,
+            'level':level+1
+        } %}
+    {% endif %}
+{% endfor %}
+

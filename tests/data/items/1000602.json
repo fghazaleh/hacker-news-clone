@@ -1,0 +1,9 @@
+{
+  "by" : "norvig",
+  "id" : 1000602,
+  "kids" : [ 100060205,100060207 ],
+  "parent" : 10006,
+  "text" : "Promise.<p>Good question. I think the engineering discipline part is much harder. I'm not sure that is because the problems really <i>are</i> harder: messier, ill-defined, changing over time; or whether it is that the academic community has focused on more well-defined formal/fundamental questions and mostly nailed them, so what we're left with is the harder messier stuff.  Certainly it is easier for me to find someone to hire fresh out of college who has excellent CS fundamentals than to find someone with strong engineering discipline.  And while my title included \"Research\", we all work very closely with Engineering.",
+  "time" : 1314230753,
+  "type" : "comment"
+}

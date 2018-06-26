@@ -1,0 +1,11 @@
+{
+  "by" : "Franco",
+  "descendants" : 2,
+  "id" : 10005,
+  "kids" : [ 1000501, 1000502 ],
+  "score" : 111,
+  "time" : 1175714200,
+  "title" : "My YC app: Dropbox - Throw away your USB drive",
+  "type" : "story",
+  "url" : "http://www.getdropbox.com/u/2/screencast.html"
+}
