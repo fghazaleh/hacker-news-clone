@@ -1,7 +1,7 @@
 <?php
 
 $app['hacker-news'] = [
-    'per_page' => 10,
+    'per_page' => 15,
     'urls' => [
         'top_stories' => 'https://hacker-news.firebaseio.com/v0/topstories.json',
         'new_stories' => 'https://hacker-news.firebaseio.com/v0/newstories.json',
